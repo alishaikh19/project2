@@ -1,13 +1,11 @@
 version: '3.8'
 services:
   airflow:
-    build: 
-      context: ./dockerfiles
-      dockerfile: 'Dockerfile.airflow'
+    image: shubham36deshpande/python_airflow:2
     volumes:
       - ./dags:/opt/airflow/dags
       - logs:/opt/airflow/logs
-      # - ./entrypoint.sh:/entrypoint.sh  # Copy entrypoint.sh script
+      # - ./dockerfiles/entrypoint.sh:/opt/airflow/entrypoint.sh  # Copy entrypoint.sh script
       - jars:/opt/jars
     ports:
       - 8080:8080
@@ -22,7 +20,9 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=password
   spark-master:
-    image: airflow-spark:latest
+    build: 
+      context: dockerfiles
+      dockerfile: 'Dockerfile.spark'
     environment:
       - SPARK_MODE=master
       - SPARK_RPC_AUTHENTICATION_ENABLED=no
@@ -36,7 +36,9 @@ services:
       - ./dags:/opt/bitnami/spark/dags
       - jars:/opt/jars
   spark-worker:
-    image: airflow-spark:latest
+    build: 
+      context: dockerfiles
+      dockerfile: 'Dockerfile.spark'
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark-master:7077
