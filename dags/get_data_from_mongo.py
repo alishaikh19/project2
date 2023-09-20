@@ -1,4 +1,5 @@
 def get_data_from_mongo():
+
    import pymongo
    import pandas as pd
    client=pymongo.MongoClient("mongodb+srv://shaikhmdali257:6QNQvKj0R4vHgEk4@cluster0.bl5rcx8.mongodb.net/?retryWrites=true&w=majority")
@@ -17,7 +18,10 @@ def get_data_from_mongo():
             'Daily Internet Usage':'daily_internet_usage',
             'Ad Topic Line':'topic',
             'Clicked on Ad':'clicked'}, inplace=True)
-#    df.to_csv('/opt/dag/advertising1.csv',index=False)
-   print(df)
 
+    df.to_csv('/opt/airflow/dags/data/advertising1.csv', index=False)
 get_data_from_mongo()
+
+
+
+

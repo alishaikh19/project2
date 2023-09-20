@@ -2,7 +2,6 @@ def send_data_to_mysql():
     import pymysql
     import csv
 
-
     input_path='/opt/airflow/dag/data/advertising1.csv'
 
     connection=pymysql.connect(host="mysql",user="root",password="password",db="mysql")
@@ -31,4 +30,7 @@ def send_data_to_mysql():
                 cursor.execute(insert_query,i)
     connection.commit()
     connection.close()
+
 send_data_to_mysql()
+
+
