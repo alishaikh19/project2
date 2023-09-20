@@ -1,4 +1,5 @@
 def get_data_from_mongo():
+
    import pymongo
    import pandas as pd
    client=pymongo.MongoClient("mongodb+srv://shaikhmdali257:6QNQvKj0R4vHgEk4@cluster0.bl5rcx8.mongodb.net/?retryWrites=true&w=majority")
@@ -19,5 +20,10 @@ def get_data_from_mongo():
             'Clicked on Ad':'clicked'}, inplace=True)
 #    df.to_csv('/opt/dag/advertising1.csv',index=False)
    print(df)
+
+
+    print("hello!")
+    print('bye')
+    print('see you')
 
 get_data_from_mongo()
