@@ -37,7 +37,7 @@ with  DAG("final_dag_processing",
                                 trigger_rule='one_success'
                                 )
 
-    process_data = SparkSubmitOperator(task_id="process_data_in_pyspark", 
+    process_data =SparkSubmitOperator(task_id="process_data_in_pyspark", 
                                         application='/opt/airflow/dags/process_data_in_pyspark.py',  # Path to your PySpark script
                                         conn_id='spark_conn',
                                         jars = "/opt/jars/mysql-connector-java-8.0.30.jar",  # Airflow connection ID for the Spark cluster
