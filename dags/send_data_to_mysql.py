@@ -30,6 +30,7 @@ def send_data_to_mysql():
                 cursor.execute(insert_query,i)
     connection.commit()
     connection.close()
+
 send_data_to_mysql()
 
 

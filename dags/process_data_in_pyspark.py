@@ -1,6 +1,7 @@
 from pyspark.sql import SparkSession
 
 def process_data_in_pyspark():
+    # Create a Spark session
 
     from pyspark.sql import SparkSession
     from pyspark.sql.functions import col,when
@@ -29,6 +30,4 @@ def process_data_in_pyspark():
                                 .otherwise("high"))
 
     df.write.jdbc(url=jdbc_url,table='advertising',mode='append',properties=connection_properties)
-
-
 process_data_in_pyspark()
