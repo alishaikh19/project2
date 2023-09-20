@@ -24,7 +24,7 @@ def get_data_from_mongo():
    print("this code is written by harry")
 
    print("this will load from mongodb avd 2")
-   print("get data 1")
+ 
 
 get_data_from_mongo()
 
