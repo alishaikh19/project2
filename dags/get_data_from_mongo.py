@@ -20,8 +20,12 @@ def get_data_from_mongo():
             'Clicked on Ad':'clicked'}, inplace=True)
 
    df.to_csv('/opt/airflow/dags/data/advertising1.csv', index=False)
+
+   print("this code is written by harry")
+
    print("this will load from mongodb avd 2")
    print("get data 1")
+
 get_data_from_mongo()
 
 
