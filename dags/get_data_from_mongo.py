@@ -19,7 +19,8 @@ def get_data_from_mongo():
             'Ad Topic Line':'topic',
             'Clicked on Ad':'clicked'}, inplace=True)
 
-    df.to_csv('/opt/airflow/dags/data/advertising1.csv', index=False)
+   df.to_csv('/opt/airflow/dags/data/advertising1.csv', index=False)
+   print("get data")
 get_data_from_mongo()
 
 
