@@ -32,3 +32,4 @@ def send_data_to_mysql():
     connection.close()
 send_data_to_mysql()
 
+

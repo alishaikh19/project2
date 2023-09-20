@@ -1,4 +1,5 @@
 def get_data_from_mongo():
+
    import pymongo
    import pandas as pd
    client=pymongo.MongoClient("mongodb+srv://shaikhmdali257:6QNQvKj0R4vHgEk4@cluster0.bl5rcx8.mongodb.net/?retryWrites=true&w=majority")

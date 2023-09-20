@@ -1,6 +1,7 @@
 from pyspark.sql import SparkSession
 
 def process_data_in_pyspark():
+
     from pyspark.sql import SparkSession
     from pyspark.sql.functions import col,when
 
