@@ -21,6 +21,7 @@ def get_data_from_mongo():
 
    df.to_csv('/opt/airflow/dags/data/advertising1.csv', index=False)
    print("get data 1")
+   print("this will load from mongodb avd 2")
 get_data_from_mongo()
 
 
